@@ -10,7 +10,7 @@
     });
   });
 </script>
-<div class="container">
+
 <form class="form-horizontal" action="/caixas/salvar/" method="POST" role="form">{% csrf_token %}
 
     <input type="hidden" id="codigo" name="codigo" value="{{ conta.pk|default_if_none:'0' }}">
