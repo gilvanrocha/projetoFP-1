@@ -20,13 +20,16 @@
         <div class="col-sm-10">
             <select class="form-control" name="pessoa_id" id="pessoa_id" >
             <option value="0">SELECIONE UMA PESSOA</option>
+            {% if pessoas != NULL %}
             {% for pessoa in pessoas %}
-                {% if pessoa.id == conta.pessoa.id %}
+                
                 <option value="{{ pessoa.id }}" selected>{{ pessoa.nome }} - {{ pessoa.email }}</option>
-                {% else %}
-                <option value="{{ pessoa.id }}">{{ pessoa.nome }} - {{ pessoa.email }}</option>
+                {% endfor %}
+                    {% else %}
+                        {% if pessoa.id == conta.pessoa.id %}
+                            <option value="{{ pessoa.id }}">{{ pessoa.nome }} - {{ pessoa.email }}</option>
                 {% endif %}
-            {% endfor %} 
+            {% endif %} 
             </select>
     </div>
     </div>
