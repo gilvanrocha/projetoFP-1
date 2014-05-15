@@ -14,3 +14,19 @@
                     <span class="input-group-addon add-on glyphicon glyphicon-calendar"></span>
                 </div>
         </div>
+
+<div class="col-sm-4">
+        <label for="datetimepicker" class=""><b>Data Final</b></label>
+        <p class="visible-print">{{ data_final|date:"d/m/Y H:i:s" }}</p>
+        <div id="datetimepicker1" class="input-group date hidden-print">
+        	<input type="text" name="data_final" value='{{ data_final|date:"d/m/Y H:i:s" }}' class="form-control">
+            <span class="input-group-addon add-on glyphicon glyphicon-calendar"></span>
+        </div>
+</div>
+
+        <div class="col-md-1">
+            <br />
+            <button type="submit" class="btn btn-primary hidden-print"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+</form>
+</div>
