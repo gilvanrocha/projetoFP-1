@@ -31,7 +31,7 @@ def pessoaSalvar(request):
         codigo = request.POST.get('codigo', '0')
 
         try:
-            pessoa = Pessoa.objects.get(pk=codigo)
+            pessoa = Pessoas.objects.get(pk=codigo)
         except:
             pessoa = Pessoa()
 
