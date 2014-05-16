@@ -77,24 +77,28 @@ def pessoaExcluir(request, pk=0):
     except:
         return HttpResponseRedirect('/pessoas/')
 
-def fluxoCaixa(request, pk=0):
-   if request.method == 'POST'
+def caixaFluxo(request):
+    if request.method == 'POST':
 
-       data_inicial = datetime.strptime(request.POST.get('data_inicial',''), '%d/%m/%Y %H:%N:%S')
-       data_final   = datetime.strptime(request.POST.get('data_final',''), '%d/%m/%Y %H:%N:%S')
-       total =0
+        data_inicial = datetime.strptime(request.POST.get('data_inicial', ''), '%d/%m/%Y %H:%M:%S')
+        data_final = datetime.strptime(request.POST.get('data_final', ''), '%d/%m/%Y %H:%M:%S')
+        total = 0
 
-       try:
-           contas = Conta.objects.filter(data_range =(data_inicial, data_final))
-       for Conta in contas:
-           total += conta.valor
-
+        try:
+            contas = Conta.objects.filter(data__range=(data_inicial, data_final))
+            for conta in contas:
+                total += conta.valor
         except:
-            contas=[]
+            contas = []
 
-        return render(request,'caixas/formfluxoCaixa.html', {'contas': contas, 'total':total, 'data_inicial':data_inicial, 'data_final':data_final})         
+        return render(request, 'caixas/formFluxoCaixa.html', {'contas' : contas, 'total': total ,'data_inicial': data_inicial, 'data_final': data_final})
 
-return render(request,'caixas/formfluxoCaixa.html', {'contas': []})
+    return render(request, 'caixas/formFluxoCaixa.html', {'contas' : []})
+
+
+
+
+           
 
 
 

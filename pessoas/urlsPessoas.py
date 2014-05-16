@@ -11,6 +11,6 @@ urlpatterns = patterns('pessoas.views',
     url(r'^salvar/$', 'pessoaSalvar'),
     url(r'^pesquisar/$', 'pessoaPesquisar'),
     url(r'^excluir/(?P<pk>\d+)/$', 'pessoaExcluir'),
-    url(r'^fluxo/$', 'caixaFluxo'),
+    url(r'^fluxo/$', 'caixasFluxo'),
     url(r'^$', 'pessoaListar'),
 )
