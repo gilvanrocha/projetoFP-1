@@ -21,7 +21,7 @@
             <select class="form-control" name="pessoa_id" id="pessoa_id" >
             <option value="0">SELECIONE UMA PESSOA</option>
             {% if pessoas != NULL %}
-                {% for pessoa in pessoa %}
+                {% for pessoa in pessoas %}
                     <option value="{{ pessoa.id }}">{{ pessoa.nome }} - {{ pessoa.email }}</option>
                 {% endfor %}
             {% else %}

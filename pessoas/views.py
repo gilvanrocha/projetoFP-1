@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'index.html')
 
 def pessoaListar(request):
-    pessoa = Pessoa.objects.all()[0:10]
+    pessoas = Pessoa.objects.all()[0:10]
 
     # TESTE LOCAL PARA VERIFICAR SE A TABELA ESTA LISTANDO
     #pessoas = []
@@ -50,14 +50,14 @@ def pessoaPesquisar(request):
         try:
             if textoBusca == 'TUDO':
                 pessoas = Pessoa.objects.all()
-            else: 
+            else:
                 pessoas = Pessoa.objects.filter(
-                    (Q(nome__contains=textoBusca) |  
-                    Q(email__contains=textoBusca) | 
-                    Q(telefone__contains=textoBusca) | 
-                    Q(logradouro__contains=textoBusca))).order_by('-nome')  #BUSCA POR NOME OU EMAIL OU TELEFONE OU LOGRADOURO... E É ORDENADO POR NOME.
+                    (Q(nome__contains=textoBusca) |
+                    Q(email__contains=textoBusca) |
+                    Q(telefone__contains=textoBusca) |
+                    Q(logradouro__contains=textoBusca))).order_by('-nome') #BUSCA POR NOME OU EMAIL OU TELEFONE OU LOGRADOURO... E É ORDENADO POR NOME.
         except:
-            pessoa = []
+            pessoas = []
 
         return render(request, 'pessoas/listaPessoas.html', {'pessoas': pessoas, 'textoBusca': textoBusca})
 
@@ -76,6 +76,10 @@ def pessoaExcluir(request, pk=0):
         return HttpResponseRedirect('/pessoas/')
     except:
         return HttpResponseRedirect('/pessoas/')
+
+
+
+
 
 
 
