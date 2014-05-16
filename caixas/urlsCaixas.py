@@ -11,6 +11,7 @@ urlpatterns = patterns('caixas.views',
     url(r'^salvar/$', 'caixaSalvar'),
     url(r'^pesquisar/$', 'caixaPesquisar'),
     url(r'^excluir/(?P<pk>\d+)/$', 'caixaExcluir'),
+    url(r'^fluxo/$', 'caixa fluxo'),
     url(r'^$', 'caixaListar'),
-    url(r'^$', 'caixa fluxo'),
+
 )
