@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'index.html')
 
 def pessoaListar(request):
-    pessoas = Pessoa.objects.all()[0:10]
+    pessoa = Pessoa.objects.all()[0:10]
 
     # TESTE LOCAL PARA VERIFICAR SE A TABELA ESTA LISTANDO
     #pessoas = []
@@ -57,7 +57,7 @@ def pessoaPesquisar(request):
                     Q(telefone__contains=textoBusca) | 
                     Q(logradouro__contains=textoBusca))).order_by('-nome')  #BUSCA POR NOME OU EMAIL OU TELEFONE OU LOGRADOURO... E É ORDENADO POR NOME.
         except:
-            pessoas = []
+            pessoa = []
 
         return render(request, 'pessoas/listaPessoas.html', {'pessoas': pessoas, 'textoBusca': textoBusca})
 
