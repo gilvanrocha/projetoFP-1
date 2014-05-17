@@ -1,4 +1,4 @@
-""" 
+"""
 @edsonlb
 https://www.facebook.com/groups/pythonmania/
 """

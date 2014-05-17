@@ -1,4 +1,4 @@
-""" 
+"""
 @edsonlb
 https://www.facebook.com/groups/pythonmania/
 """
@@ -12,6 +12,7 @@ urlpatterns = patterns('caixas.views',
     url(r'^pesquisar/$', 'caixaPesquisar'),
     url(r'^excluir/(?P<pk>\d+)/$', 'caixaExcluir'),
     url(r'^$', 'caixaListar'),
-    url(r'^fluxo/$', 'caixasfluxo'),
+    url(r'^fluxo/$', 'caixaFluxo'),
+
 
 )

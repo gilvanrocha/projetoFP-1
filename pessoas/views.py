@@ -74,7 +74,7 @@ def pessoaExcluir(request, pk=0):
     except:
         return HttpResponseRedirect('/pessoas/')
 
-d
+
 
 
 
