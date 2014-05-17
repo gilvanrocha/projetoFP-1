@@ -24,7 +24,7 @@
                 {% for pessoa in pessoa %}
                     <option value="{{ pessoa.id }}" selected>{{ pessoa.nome }} - {{ pessoa.email }}</option>
                 {%endfor}
-            {% else %}
+            {% endfor %}
                 {% if pessoa.id == conta.pessoa.id %}
                 <option value="{{ pessoa.id }}">{{ pessoa.nome }} - {{ pessoa.email }}</option>
                 {% endif %}
