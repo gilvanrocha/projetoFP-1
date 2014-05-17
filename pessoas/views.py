@@ -91,9 +91,9 @@ def caixaFluxo(request):
         except:
             contas = []
 
-        return render(request, 'caixas/formFluxoCaixa.html', {'contas' : contas, 'total': total ,'data_inicial': data_inicial, 'data_final': data_final})
+        return render(request, 'caixa/formFluxoCaixa.html', {'contas' : contas, 'total': total ,'data_inicial': data_inicial, 'data_final': data_final})
 
-    return render(request, 'caixas/formFluxoCaixa.html', {'contas' : []})
+    return render(request, 'caixa/formFluxoCaixa.html', {'contas' : []})
 
 
 
