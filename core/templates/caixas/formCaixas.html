@@ -60,8 +60,10 @@
 
             <div class="col-sm-5">
                 <div id="datetimepicker" class="input-group date">
-                    <input type="text" name="data" value='{{ conta.data|date:"d/m/Y H:i:s" }}' class="form-control">
-                    <span class="input-group-addon add-on glyphicon glyphicon-calendar"></span>
+                    <input type="text" name="data" value="{{ conta.data }}" >
+                    <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                    </span>
                 </div>
             </div>
     </div>
