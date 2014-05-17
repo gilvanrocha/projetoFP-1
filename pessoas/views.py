@@ -15,10 +15,7 @@ def index(request):
 def pessoaListar(request):
     pessoas = Pessoa.objects.all()[0:10]
 
-    # TESTE LOCAL PARA VERIFICAR SE A TABELA ESTA LISTANDO
-    #pessoas = []
-    #pessoas.append(Pessoa(nome='NOME1', email='MAIL', telefone='TELEFONE'))
-    #pessoas.append(Pessoa(nome='NOME2'))
+ 
 
     return render(request, 'pessoas/listaPessoas.html', {'pessoas': pessoas})
 
@@ -77,23 +74,7 @@ def pessoaExcluir(request, pk=0):
     except:
         return HttpResponseRedirect('/pessoas/')
 
-def caixaFluxo(request):
-    if request.method == 'POST':
-
-        data_inicial = datetime.strptime(request.POST.get('data_inicial', ''), '%d/%m/%Y %H:%M:%S')
-        data_final = datetime.strptime(request.POST.get('data_final', ''), '%d/%m/%Y %H:%M:%S')
-        total = 0
-
-        try:
-            contas = Conta.objects.filter(data__range=(data_inicial, data_final))
-            for conta in contas:
-                total += conta.valor
-        except:
-            contas = []
-
-        return render(request, 'caixa/formFluxoCaixa.html', {'contas' : contas, 'total': total ,'data_inicial': data_inicial, 'data_final': data_final})
-
-    return render(request, 'caixa/formFluxoCaixa.html', {'contas' : []})
+d
 
 
 
