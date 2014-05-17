@@ -10,10 +10,14 @@
     <!-- CSS -->
     <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-    <!-- FIM CSS -->  
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+    <style type="text/css">
+    input[type='text'], input[type='email']{
+      height: 28px;
+      line-height: 28px;
+    }
+    </style>
 
 
  
@@ -71,6 +75,12 @@
         format: 'dd/MM/yyyy hh:mm:ss',
         language: 'pt-BR'
       });
+
+      $('#datetimepicker1').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm:ss',
+        language: 'pt-BR'
+      });
+      
     </script>
 
     <!-- FIM JavaScript -->
